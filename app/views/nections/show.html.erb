@@ -1,0 +1,20 @@
+<% title "Nection" %>
+
+<p>
+  <strong>Scene:</strong>
+  <%= @nection.scene_id %>
+</p>
+<p>
+  <strong>Adjacent:</strong>
+  <%= @nection.adjacent_id %>
+</p>
+<p>
+  <strong>Direstion:</strong>
+  <%= @nection.direction %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_nection_path(@nection) %> |
+  <%= link_to "Destroy", @nection, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", nections_path %>
+</p>

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126155615) do
+ActiveRecord::Schema.define(:version => 20130126174617) do
+
+  create_table "nections", :force => true do |t|
+    t.integer  "scene_id"
+    t.integer  "adjacent_id"
+    t.string   "direction"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "scenections", :force => true do |t|
     t.integer  "scene_id"

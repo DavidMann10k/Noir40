@@ -1,0 +1,21 @@
+<% title "Nections" %>
+
+<table>
+  <tr>
+    <th>Scene</th>
+    <th>Adjacent</th>
+    <th>Direstion</th>
+  </tr>
+  <% for nection in @nections %>
+    <tr>
+      <td><%= nection.scene_id %></td>
+      <td><%= nection.adjacent_id %></td>
+      <td><%= nection.direction %></td>
+      <td><%= link_to "Show", nection %></td>
+      <td><%= link_to "Edit", edit_nection_path(nection) %></td>
+      <td><%= link_to "Destroy", nection, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Nection", new_nection_path %></p>
