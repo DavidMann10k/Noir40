@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126062812) do
+ActiveRecord::Schema.define(:version => 20130126155615) do
 
-  create_table "connections", :force => true do |t|
+  create_table "scenections", :force => true do |t|
     t.integer  "scene_id"
-    t.integer  "connection_id"
+    t.integer  "adjecent_id"
     t.string   "direction"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "scenes", :force => true do |t|

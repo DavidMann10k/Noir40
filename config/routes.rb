@@ -1,6 +1,6 @@
 BrutalSunshine::Application.routes.draw do
 
-  resources :connections
+  resources :scenections
 
   resources :scenes
 

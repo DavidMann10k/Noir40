@@ -1,0 +1,16 @@
+<%= form_for @scenection do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :scene_id %><br />
+    <%= f.select :scene_id, Scene.all.collect {|s| [s.name, s.id ]} %>
+  </p>
+  <p>
+    <%= f.label :scenection_id %><br />
+    <%= f.select :scenection_id, Scene.all.collect {|s| [s.name, s.id ]} %>
+  </p>
+  <p>
+    <%= f.label :direction %><br />
+    <%= f.select :direction, options_for_select([["north (UR)", "north"], ["south (LL)", "south"], ["east (LR)", "east"], ["west (UL)", "west"]], @scenection.direction) %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

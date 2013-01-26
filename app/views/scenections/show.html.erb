@@ -1,0 +1,20 @@
+<% title "Connection" %>
+
+<p>
+  <strong>Scene:</strong>
+  <%= @scenection.scene_id %>
+</p>
+<p>
+  <strong>Connection:</strong>
+  <%= @scenection.adjacent_id %>
+</p>
+<p>
+  <strong>Direction:</strong>
+  <%= @scenection.direction %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_scenection_path(@scenection) %> |
+  <%= link_to "Destroy", @scenection, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", scenections_path %>
+</p>
