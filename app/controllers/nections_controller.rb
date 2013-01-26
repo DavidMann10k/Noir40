@@ -13,6 +13,7 @@ class NectionsController < ApplicationController
 
   def create
     @nection = Nection.new(params[:nection])
+    
     if @nection.save
       redirect_to @nection, :notice => "Successfully created nection."
     else

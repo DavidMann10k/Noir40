@@ -5,6 +5,7 @@
   <%= @scene.name %> - 
     <% @scene.nections.each do |n| %>
   <%= n.direction %> to <%= n.adjacent.name %>
+  <%= link_to n.direction, scene_path(n.adjacent) %>
 <% end %>
 </p>
 
