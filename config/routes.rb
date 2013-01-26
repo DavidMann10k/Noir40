@@ -1,5 +1,7 @@
 BrutalSunshine::Application.routes.draw do
 
+  match 'scene/move' => 'scenes#move'
+
   resources :scene_objects
 
   resources :nections

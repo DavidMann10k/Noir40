@@ -8,8 +8,8 @@
   </tr>
   <% for nection in @nections %>
     <tr>
-      <td><%= nection.scene_id %></td>
-      <td><%= nection.adjacent_id %></td>
+      <td><%= nection.scene.name %></td>
+      <td><%= nection.adjacent.name %></td>
       <td><%= nection.direction %></td>
       <td><%= link_to "Show", nection %></td>
       <td><%= link_to "Edit", edit_nection_path(nection) %></td>

@@ -1,4 +1,4 @@
-<%= title @scene.name %>
+<% title @scene.name %>
 <div id="scene">
   <div id="wall_l" class="ui"><%= image_tag @scene.left_wall.url(:full) %></div>
   <div id="wall_r" class="ui"><%= image_tag @scene.right_wall.url(:full) %></div>
@@ -9,8 +9,6 @@
       <%= image_tag o.image.url(:screen) %>
     <% end %>
   <% end %>
-  <div id="object_0" class="ui"></div>
-  <div id="object_1" class="ui"></div>
   <div id="menu" class="ui">
     <div id="heart"><div id="beats">200</div></div>
     <ul>
@@ -21,6 +19,7 @@
             <ul class="nav_lvl2">
               <% @scene.nections.each do |n| %>
                 <li><%= link_to n.direction, scene_path(n.adjacent) %></li>
+                <li><%= link_to n.direction, "/scene/move?direction=#{n.direction}&scene_id=#{@scene.id}" %></li>
               <% end %>
             </ul>
           </li>
@@ -47,16 +46,20 @@
               </li>
             </ul>
           </li>
+          <% searchables = if !@scene.scene_objects.searchables.empty? %>
           <li class="nav_head">Search</li>
           <li class="sub_nav">
             <ul class="nav_lvl2">
-              <li>Tattered Piece of Paper
+              <% searchables.each do |s| %>
+              <li>s.Name
                 <ul class="nav_action">
                   <li>Pick Up</li>
                 </ul>
               </li>
+              <% end %>
             </ul>
           </li>
+          <% end %>
         </ul>
       </li>   
     </ul>

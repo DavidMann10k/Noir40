@@ -13,6 +13,11 @@
       <%= link_to "Sign up", new_user_registration_path unless signed_in? %>
       <%= link_to "Profile", user_path(current_user) if signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path, :method => :delete if signed_in? %>
+      <% if signed_in? && current_user.admin? %>
+         | <%= link_to "Scenes", scenes_path %> | 
+        <%= link_to "Scene Objects", scene_objects_path %> | 
+        <%= link_to "Nections", nections_path %>
+      <% end %>
       <% yield :nav %>
     </nav>
     <div class="flash">

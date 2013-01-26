@@ -33,4 +33,15 @@ class ScenesController < ApplicationController
     @scene.destroy
     redirect_to scenes_url, :notice => "Successfully destroyed scene."
   end
+
+  def move
+    @scene = Scene.find params[:scene_id]
+
+    @scene.nections.each do |n|
+      if n.direction == params[:direction]
+        redirect_to scene_path(n.adjacent)
+        ##use a heart
+      end
+    end
+  end
 end

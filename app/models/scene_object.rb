@@ -8,4 +8,7 @@ class SceneObject < ActiveRecord::Base
     half: '200x200',
     full: '400x400'
   }
+
+  scope :searchables, where(obtainable: false)
+  scope :obtainables, where(obtainable: true)
 end
