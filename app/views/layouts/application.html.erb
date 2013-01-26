@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Frozen_Foundation</title>
+    <title>Frozen Foundation</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header><%= link_to "BRUTAL SUNSHINE", root_path, :class => "title" %></header>
+    <header><%= link_to "Frozen Foundation", root_path, :class => "title" %></header>
     <nav>
       <%= link_to "Sign in", new_user_session_path unless signed_in? %>
       <%= link_to "Sign up", new_user_registration_path unless signed_in? %>
