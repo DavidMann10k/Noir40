@@ -4,6 +4,11 @@
   <div id="wall_r" class="ui"><%= image_tag @scene.right_wall.url(:full) %></div>
   <div id="floor" class="ui"><%= image_tag @scene.floor.url(:full) %></div>
   <div id="player" class="ui"></div>
+  <% @scene.scene_objects.each do |o| %>
+    <%= content_tag :div, 'scene_object_id' => o.id, :class => 'ui' do %>
+      <%= image_tag o.image.url(:screen) %>
+    <% end %>
+  <% end %>
   <div id="object_0" class="ui"></div>
   <div id="object_1" class="ui"></div>
   <div id="menu" class="ui">

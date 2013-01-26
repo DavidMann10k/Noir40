@@ -16,6 +16,12 @@
   <strong>Location:</strong>
   <%= @scene_object.location %>
 </p>
+<p>
+  <strong>Scene:</strong>
+  <%= @scene_object.scene.name %>
+</p>
+
+<%= image_tag @scene_object.image.url(:half) %>
 
 <p>
   <%= link_to "Edit", edit_scene_object_path(@scene_object) %> |

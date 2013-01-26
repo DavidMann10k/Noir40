@@ -5,6 +5,8 @@ class Scene < ActiveRecord::Base
   has_many :nected, :through => :nections, :source => :scene
   has_many :inverse_nections, :class_name => "Nections", :foreign_key => "adjacent_id"
   has_many :inverse_nected, :through => :inverse_nections, :source => :scene
+  
+  has_many :scene_objects
 
   has_attached_file :floor, styles: {
     full: '800x600>',
