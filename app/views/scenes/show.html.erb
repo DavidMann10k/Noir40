@@ -1,18 +1,64 @@
-<% title "Scene" %>
-  <strong>Name:</strong>
-  <%= @scene.name %> - 
-  <ul>
-    <% @scene.nections.each do |n| %>
-      <li><%= link_to n.direction, scene_path(n.adjacent) %></li>
-    <% end %>
-  </ul>
+<%= title "Scene" %>
 
-<%= image_tag @scene.floor.url(:full) %>
-<%= image_tag @scene.left_wall.url(:full) %>
-<%= image_tag @scene.right_wall.url(:full) %>
 
-<p>
-  <%= link_to "Edit", edit_scene_path(@scene) %> |
-  <%= link_to "Destroy", @scene, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", scenes_path %>
-</p>
+<div id="scene">
+  <div id="wall_l" class="ui"><%= image_tag @scene.left_wall.url(:full) %></div>
+  <div id="wall_r" class="ui"><%= image_tag @scene.right_wall.url(:full) %></div>
+  <div id="floor" class="ui"><%= image_tag @scene.floor.url(:full) %></div>
+  <div id="player" class="ui"></div>
+  <div id="object_0" class="ui"></div>
+  <div id="object_1" class="ui"></div>
+  <div id="menu" class="ui">
+    <div id="heart"><div id="beats">200</div></div>
+    <ul>
+      <li>
+        <ul class="nav_lvl1">
+          <li class="nav_head">Move</li>
+          <li class="sub_nav">
+            <ul class="nav_lvl2">
+              <% @scene.nections.each do |n| %>
+                <li><%= link_to n.direction, scene_path(n.adjacent) %></li>
+              <% end %>
+            </ul>
+          </li>
+          <li class="nav_head">Inventory</li>
+          <li class="sub_nav">
+            <ul class="nav_lvl2">
+              <li>.357 Magnum
+                <ul class="nav_action">
+                  <li>Use</li>
+                  <li>Drop</li>
+                </ul>
+              </li>
+              <li>Shiv
+                <ul class="nav_action">
+                  <li>Use</li>
+                  <li>Drop</li>
+                </ul>
+              </li>
+              <li>Red Book
+                <ul class="nav_action">
+                  <li>Use</li>
+                  <li>Drop</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav_head">Search</li>
+          <li class="sub_nav">
+            <ul class="nav_lvl2">
+              <li>Tattered Piece of Paper
+                <ul class="nav_action">
+                  <li>Pick Up</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>   
+    </ul>
+  </div>
+</div>
+<%= link_to "Edit", edit_scene_path(@scene) if can? :edit, @scene %> |
+<%= link_to "Destroy", @scene, :confirm => 'Are you sure?', :method => :delete if can? :destroy, @scene %> |
+<%= link_to "View All", scenes_path if signed_in? && current_user.admin? %>
