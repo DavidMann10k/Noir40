@@ -10,7 +10,7 @@
   <% for scene_object in @scene_objects %>
     <tr>
       <td><%= scene_object.name %></td>
-      <td><%= scene_object.scene_id %></td>
+      <td><%= scene_object.scene.name %></td>
       <td><%= scene_object.obtainable %></td>
       <td><%= scene_object.location %></td>
       <td><%= link_to "Show", scene_object %></td>

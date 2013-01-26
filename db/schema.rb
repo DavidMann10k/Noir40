@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130126210744) do
+ActiveRecord::Schema.define(:version => 20130126233902) do
 
   create_table "nections", :force => true do |t|
     t.integer  "scene_id"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20130126210744) do
     t.boolean  "admin",                  :default => false,                   :null => false
     t.string   "name",                   :default => "",                      :null => false
     t.string   "time_zone",              :default => "Central Standard Time", :null => false
+    t.integer  "beats"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
