@@ -1,14 +1,12 @@
 class NectionsController < ApplicationController
+  load_and_authorize_resource
   def index
-    @nections = Nection.all
   end
 
   def show
-    @nection = Nection.find(params[:id])
   end
 
   def new
-    @nection = Nection.new
   end
 
   def create

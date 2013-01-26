@@ -1,7 +1,5 @@
 class RemoveScenections < ActiveRecord::Migration
-  def up
-  end
-
-  def down
+  def change
+    drop_table :scenections
   end
 end
