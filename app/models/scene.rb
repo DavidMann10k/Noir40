@@ -1,5 +1,5 @@
 class Scene < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :floor, :left_wall, :right_wall
 
   has_attached_file :floor, styles: {
     full: '800x600>',
