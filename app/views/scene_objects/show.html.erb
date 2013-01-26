@@ -1,0 +1,24 @@
+<% title "Scene Object" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @scene_object.name %>
+</p>
+<p>
+  <strong>Scene:</strong>
+  <%= @scene_object.scene_id %>
+</p>
+<p>
+  <strong>Obtainable:</strong>
+  <%= @scene_object.obtainable %>
+</p>
+<p>
+  <strong>Location:</strong>
+  <%= @scene_object.location %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_scene_object_path(@scene_object) %> |
+  <%= link_to "Destroy", @scene_object, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", scene_objects_path %>
+</p>

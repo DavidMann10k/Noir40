@@ -1,0 +1,20 @@
+<%= form_for @scene_object do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :scene_id %><br />
+    <%= f.select :scene_id, Scene.all.collect {|s| [s.name, s.id ]} %>
+  </p>
+  <p>
+    <%= f.label :obtainable %><br />
+    <%= f.check_box :obtainable %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.select :location, options_for_select([["north (UR)", "north"], ["south (LL)", "south"], ["east (LR)", "east"], ["west (UL)", "west"]], @scene_object.location) %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

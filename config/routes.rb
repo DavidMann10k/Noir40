@@ -1,5 +1,7 @@
 BrutalSunshine::Application.routes.draw do
 
+  resources :scene_objects
+
   resources :nections
 
   resources :scenections

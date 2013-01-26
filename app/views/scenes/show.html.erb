@@ -1,6 +1,4 @@
-<%= title "Scene" %>
-
-
+<%= title @scene.name %>
 <div id="scene">
   <div id="wall_l" class="ui"><%= image_tag @scene.left_wall.url(:full) %></div>
   <div id="wall_r" class="ui"><%= image_tag @scene.right_wall.url(:full) %></div>

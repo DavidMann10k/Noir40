@@ -1,0 +1,23 @@
+<% title "Scene Objects" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Scene</th>
+    <th>Obtainable</th>
+    <th>Location</th>
+  </tr>
+  <% for scene_object in @scene_objects %>
+    <tr>
+      <td><%= scene_object.name %></td>
+      <td><%= scene_object.scene_id %></td>
+      <td><%= scene_object.obtainable %></td>
+      <td><%= scene_object.location %></td>
+      <td><%= link_to "Show", scene_object %></td>
+      <td><%= link_to "Edit", edit_scene_object_path(scene_object) %></td>
+      <td><%= link_to "Destroy", scene_object, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Scene Object", new_scene_object_path %></p>

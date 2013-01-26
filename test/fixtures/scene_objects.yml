@@ -1,0 +1,11 @@
+one:
+  name: MyString
+  scene_id: 1
+  obtainable: false
+  location: MyString
+
+two:
+  name: MyString
+  scene_id: 1
+  obtainable: false
+  location: MyString

@@ -1,0 +1,2 @@
+module SceneObjectsHelper
+end
