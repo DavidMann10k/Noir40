@@ -2,8 +2,8 @@ class Scene < ActiveRecord::Base
   attr_accessible :name, :floor, :left_wall, :right_wall
 
   has_many :connections
-  has_many :connected, :through => :connections
-  has_many :inverse_connections, :class_name => "Connections", :foreign_key => "scene_id"
+  has_many :connected, :through => :connections, :source => :scene
+  has_many :inverse_connections, :class_name => "Connection", :foreign_key => "connection_id"
   has_many :inverse_connected, :through => :inverse_connections, :source => :scene
 
   has_attached_file :floor, styles: {

@@ -1,4 +1,4 @@
-class Connection < ActiveRecord::Base
+class Way < ActiveRecord::Base
   attr_accessible :scene_id, :connection_id, :direction
 
   belongs_to :scene

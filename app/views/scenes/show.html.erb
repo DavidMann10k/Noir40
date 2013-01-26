@@ -4,11 +4,13 @@
   <strong>Name:</strong>
   <%= @scene.name %>
 </p>
+<% @scene.connections.each do |c| %>
+  <%= c.direction %> to <%= c.adjacent.name %>
+<% end %>
 
 <%= image_tag @scene.floor.url(:full) %>
 <%= image_tag @scene.left_wall.url(:full) %>
 <%= image_tag @scene.right_wall.url(:full) %>
-
 <p>
   <%= link_to "Edit", edit_scene_path(@scene) %> |
   <%= link_to "Destroy", @scene, :confirm => 'Are you sure?', :method => :delete %> |
