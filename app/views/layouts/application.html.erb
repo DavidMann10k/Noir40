@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BrutalSunshine</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header><%= link_to "BRUTAL SUNSHINE", root_path, :class => "title" %></header>
+    <nav>
+      <%= link_to "Sign in", new_user_session_path unless signed_in? %>
+      <%= link_to "Sign up", new_user_registration_path unless signed_in? %>
+      <%= link_to "Profile", user_path(current_user) if signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete if signed_in? %>
+      <% yield :nav %>
+    </nav>
+    <div class="flash">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+    </div>
+    <div class="content">
+      <%= yield %>
+    </div>
+    <footer></footer>
+  </body>
+</html>
