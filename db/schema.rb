@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20130126155615) do
 
   create_table "scenections", :force => true do |t|
     t.integer  "scene_id"
-    t.integer  "adjecent_id"
+    t.integer  "adjacent_id"
     t.string   "direction"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
