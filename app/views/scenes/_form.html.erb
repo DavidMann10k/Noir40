@@ -1,0 +1,20 @@
+<%= form_for @scene do |f| %>
+  <%= f.error_messages %>
+  <div class="field">
+  <%= f.label :floor %><br />
+  <%= f.file_field :floor %>
+  </div>
+  <div class="field">
+  <%= f.label :left_wall %><br />
+  <%= f.file_field :left_wall %>
+  </div>
+  <div class="field">
+  <%= f.label :right_wall %><br />
+  <%= f.file_field :right_wall %>
+  </div>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

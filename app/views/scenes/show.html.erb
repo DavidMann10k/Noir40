@@ -1,0 +1,12 @@
+<% title "Scene" %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @scene.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_scene_path(@scene) %> |
+  <%= link_to "Destroy", @scene, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", scenes_path %>
+</p>

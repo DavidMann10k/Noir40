@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130121040110) do
+ActiveRecord::Schema.define(:version => 20130126051108) do
+
+  create_table "scenes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "floor_file_name"
+    t.string   "floor_content_type"
+    t.integer  "floor_file_size"
+    t.datetime "floor_updated_at"
+    t.string   "left_wall_file_name"
+    t.string   "left_wall_content_type"
+    t.integer  "left_wall_file_size"
+    t.datetime "left_wall_updated_at"
+    t.string   "right_wall_file_name"
+    t.string   "right_wall_content_type"
+    t.integer  "right_wall_file_size"
+    t.datetime "right_wall_updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",                      :null => false

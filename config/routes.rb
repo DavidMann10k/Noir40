@@ -1,5 +1,7 @@
 BrutalSunshine::Application.routes.draw do
 
+  resources :scenes
+
   root :to => 'pages#index'
   devise_for :users
 
