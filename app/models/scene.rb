@@ -1,10 +1,10 @@
 class Scene < ActiveRecord::Base
   attr_accessible :name, :floor, :left_wall, :right_wall
 
-  has_many :scenections
-  has_many :connected, :through => :scenections, :source => :scene
-  has_many :inverse_scenections, :class_name => "Scenections", :foreign_key => "scenection_id"
-  has_many :inverse_connected, :through => :inverse_scenections, :source => :scene
+  has_many :nections
+  has_many :nected, :through => :nections, :source => :scene
+  has_many :inverse_nections, :class_name => "Nections", :foreign_key => "adjacent_id"
+  has_many :inverse_nected, :through => :inverse_nections, :source => :scene
 
   has_attached_file :floor, styles: {
     full: '800x600>',

@@ -2,11 +2,11 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @scene.name %>
-</p>
-<% @scene.scenections.each do |c| %>
-  <%= c.direction %> to <%= c.adjacent.name %>
+  <%= @scene.name %> - 
+    <% @scene.nections.each do |n| %>
+  <%= n.direction %> to <%= n.adjacent.name %>
 <% end %>
+</p>
 
 <%= image_tag @scene.floor.url(:full) %>
 <%= image_tag @scene.left_wall.url(:full) %>
