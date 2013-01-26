@@ -1,0 +1,16 @@
+<%= form_for @connection do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :scene_id %><br />
+    <%= f.select :scene_id, Scene.all.collect {|s| [s.name, s.id ]} %>
+  </p>
+  <p>
+    <%= f.label :connection_id %><br />
+    <%= f.select :connection_id, Scene.all.collect {|s| [s.name, s.id ]} %>
+  </p>
+  <p>
+    <%= f.label :direction %><br />
+    <%= f.select :direction, options_for_select([["north (UR)", "north"], ["south (LL)", "south"], ["east (LR)", "east"], ["west (UL)", "west"]], @connection.direction) %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

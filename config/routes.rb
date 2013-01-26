@@ -1,5 +1,7 @@
 BrutalSunshine::Application.routes.draw do
 
+  resources :connections
+
   resources :scenes
 
   root :to => 'pages#index'
