@@ -1,139 +1,159 @@
 body {
-  background: #fff;
+	background: url('https://s3.amazonaws.com/frozen_foundation/bg.jpg') repeat-x;
 }
 
 ul {
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
 }
 
 #scene {
-  z-index: 0;
-  margin: 20px auto;
-  height: 600px; 
-  width: 800px;
+	z-index: 0;
+	margin: 20px auto;
+	height: 600px; 
+	width: 800px;
 }
 
 #scene div.ui {
-  position: absolute;
+	position: absolute;
 }
 
 #scene div.ui  img{
-  height: 600px; 
-  width: 800px;
-  border: 1px solid red;
+	height: 600px; 
+	width: 800px;
 }
 
 #wall_l {
-  z-index: 1;
+	z-index: 1;
 }
 
 #wall_r {
-  z-index: 2;
+	z-index: 2;
 }
 
 #floor {
-  z-index: 3;
+	z-index: 3;
 }
 
 #player {
-	z-index: 4;
+
 }
 
-div.ui {
-	z-index: 5;
+#object_0 {
+
+}
+
+#object_1 {
+
+}
+
+#compass {
+	height: 100px;
+	width: 100px;
+	margin: 30px 0px 0px 650px;
+	background: transparent url('https://s3.amazonaws.com/frozen_foundation/compass.png') no-repeat;
 }
 
 #menu {
-  margin: 475px 0px 0px 20px;
-  z-index: 100;
+	margin: 475px 0px 0px 20px;
+	z-index: 100;
 }
 
 #menu #heart {
-  border: 1px solid red;
-  float: left;
-  width: 75px;
-  height: 100px;
+	float: left;
+	width: 75px;
+	height: 100px;
+	background: transparent url('https://s3.amazonaws.com/frozen_foundation/heart.gif') no-repeat;
 }
 
-#menu #heart #beat {
-  color: red;
+#menu #heart #beats {
+	color: #000;
+	margin: 0px auto;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica;
+	font-weight: bold;
+	margin-top: 45px;		
 }
 
 #nav_wrapper {
-  float: left;
+	float: left;
 }
 
 li.nav a,
 li.subnav a,
 ul.action a {
-  margin: 0px;
-  text-align: center;
-  font-size: 10px;
-  font-family: Verdana, Arial, Helvetica;
-  padding: 3px;
-  color: #999;
-  border: 1px solid #fff;
-  background: url('../images/menu_bg.png') repeat;
-  text-decoration: none;
-  font-weight: bold;
+	margin: 0px;
+	text-align: center;
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica;
+	padding: 3px;
+	color: #999;
+	border: 1px solid #fff;
+	background: url('https://s3.amazonaws.com/frozen_foundation/menu_bg.png') repeat;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#search a {
+	font-weight: normal;
 }
 
 /* FIRST LEVEL OF NAV */
 
 #move ul.move_subnav,
 #inventory ul.inventory_subnav,
-#search ul.search_subnav {
-  position: absolute;
-  margin-left: -999px;
-  margin-top: -20px;
+#pickup ul.pickup_subnav {
+	position: absolute;
+	margin-left: -999px;
+	margin-top: -20px;
 }
 
 #move:hover ul.move_subnav,
 #inventory:hover ul.inventory_subnav,
-#search:hover ul.search_subnav {
-  margin-left: 83px;
+#pickup:hover ul.pickup_subnav {
+	margin-left: 83px;
 }
 
 /* SECOND LEVEL OF NAV */
 
 ul.action {
-  position: absolute;
-  margin-left: -999px;
-  margin-top: -20px;
+	position: absolute;
+	margin-left: -999px;
+	margin-top: -20px;
 }
 
 ul.action a {
-  width: 75px;
+	width: 75px;
 }
 
-ul.search_subnav  li:hover ul.action,
+ul.pickup_subnav  li:hover ul.action,
 ul.inventory_subnav li:hover ul.action {
-  display: block;
-  margin-left: 133px;
+	display: block;
+	margin-left: 133px;
 }
 
 ul.action li a,
 ul.move_subnav li a{
-  display: block;
-  width: 75px;
-  text-align: center;
-  font-weight: normal;
+	display: block;
+	width: 75px;
+	text-align: center;
+	font-weight: normal;
 }
 
 li.nav a {
-  display: block;
-  text-align: left;
-  width: 75px;
+	display: block;
+	text-align: left;
+	width: 75px;
 }
 
 li.nav_head a{
-  width: 125px;
-  text-align: center;
+	width: 125px;
+	text-align: center;
 }
 
 li.nav a:hover {
-  border: 1px solid #f00;
-  cursor: pointer;
+	border: 1px solid #f00;
+	cursor: pointer;
 }
+
