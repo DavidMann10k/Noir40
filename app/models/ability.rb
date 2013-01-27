@@ -5,7 +5,13 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.admin?
         can :manage, :all
+        can :new_game, User
+        can :move, Scene
+        can :search, Scene
       else
+        can :new_game, User
+        can :move, Scene
+        can :search, Scene
         can :read, :all
       end
     #

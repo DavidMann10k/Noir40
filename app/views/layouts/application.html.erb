@@ -7,7 +7,6 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header><%= link_to "Frozen Foundation", root_path, :class => "title" %></header>
     <nav>
       <%= link_to "Sign in", new_user_session_path unless signed_in? %>
       <%= link_to "Sign up", new_user_registration_path unless signed_in? %>
@@ -18,7 +17,7 @@
         <%= link_to "Scene Objects", scene_objects_path %> | 
         <%= link_to "Nections", nections_path %>
       <% end %>
-      <%= link_to "New Game", "/new_game" %>
+      <%= link_to "New Game", "/new_game" if signed_in? %>
       <% yield :nav %>
     </nav>
     <div class="flash">
