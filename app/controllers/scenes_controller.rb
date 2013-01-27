@@ -8,8 +8,6 @@ class ScenesController < ApplicationController
     redirect_to "/death" if current_user.beats <= 0
     redirect_to "/revenge" if @scene.end? && current_user.gun?
     redirect_to "/killed" if @scene.end? && !current_user.gun?
-
-
   end
 
   def new
@@ -64,7 +62,7 @@ class ScenesController < ApplicationController
     cu.save
 
     if !SceneObject.find_all_by_scene_id(@scene.id).empty?
-      
+
       current_user.user_object_states.each do |uos|
         if uos.scene_object && uos.scene_object.obtainable?
           flash[:notice] = "You found THE GUN!"
