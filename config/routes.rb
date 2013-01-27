@@ -3,7 +3,8 @@ BrutalSunshine::Application.routes.draw do
   resources :bags
 
   match 'scene/move' => 'scenes#move'
-  match 'scene/search' => 'scene#search'
+  match 'scene/search' => 'scenes#search'
+  match 'new_game' => 'users#new_game'
 
   resources :scene_objects
 

@@ -41,14 +41,6 @@ ActiveRecord::Schema.define(:version => 20130127024957) do
     t.integer  "user_id"
   end
 
-  create_table "scenections", :force => true do |t|
-    t.integer  "scene_id"
-    t.integer  "adjacent_id"
-    t.string   "direction"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "scenes", :force => true do |t|
     t.string   "name"
     t.datetime "created_at",              :null => false
@@ -65,6 +57,12 @@ ActiveRecord::Schema.define(:version => 20130127024957) do
     t.string   "right_wall_content_type"
     t.integer  "right_wall_file_size"
     t.datetime "right_wall_updated_at"
+  end
+
+  create_table "user_scene_states", :force => true do |t|
+    t.integer "user_id"
+    t.integer "scene_id"
+    t.boolean "searchable"
   end
 
   create_table "users", :force => true do |t|

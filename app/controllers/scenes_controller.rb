@@ -47,13 +47,13 @@ class ScenesController < ApplicationController
 
   def search
     @scene = Scene.find params[:scene_id]
+    uss = current_user.user_scene_states.find_by_scene_id(params[:scene_id])
+    uss.searchable = false
+    uss.save
 
-    if @scene.scene_objects.searchables
-      if session["scene_#{@scene.id}"] = false
-        @scene.scene_objects.each do |so|
-          session["object_#{so.id}"] = true
-        end
-      end
+    @scene.scene_objects.each do |so|
+      #make things visible
     end
+    redirect_to scene_path(@scene)
   end
 end
