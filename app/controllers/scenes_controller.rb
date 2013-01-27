@@ -64,18 +64,20 @@ class ScenesController < ApplicationController
     cu.save
 
     if !SceneObject.find_all_by_scene_id(@scene.id).empty?
+      
       current_user.user_object_states.each do |uos|
-        if uos.scene_object && uos.scene_object.name.downcase == 'the gun'
-          flash[:notice] = "You found a gun!"
+        if uos.scene_object && uos.scene_object.obtainable?
+          flash[:notice] = "You found THE GUN!"
           u = current_user
           u.gun = true
           u.save
+          uos.destroy
         else
-          fash[:notice] = "you found nothing"
+          flash[:notice] = "You found nothing"
         end
-
       end
     end
+          
 
     redirect_to scene_path(@scene.id)
   end
