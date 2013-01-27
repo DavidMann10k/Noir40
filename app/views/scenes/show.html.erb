@@ -21,47 +21,15 @@
                 <li><%= link_to n.direction, "/scene/move?direction=#{n.direction}&scene_id=#{@scene.id}" %></li>
               <% end %>
             </ul>
-          </li>
-
-          <li id="inventory" class="nav"><a href="#">Inventory</a>
-            <ul class="inventory_subnav">
-              <li class="nav_head"><a href="#">.357 Magnum</a>
-                <ul class="action">
-                  <li><a href="#">Use</a></li>
-                  <li><a href="#">Drop</a></li>
-                </ul>
-              </li>
-              <li class="nav_head"><a href="#">Shiv</a>
-                <ul class="action">
-                  <li><a href="#">Use</a></li>
-                  <li><a href="#">Drop</a></li>
-                </ul>
-              </li>
-              <li class="nav_head"><a href="#">Red Book</a>
-                <ul class="action">
-                  <li><a href="#">Use</a></li>
-                  <li><a href="#">Drop</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-                
-          <li id="search" class="nav"><%= link_to "Search", "/scenes/search?" %>
-            <ul class="search_subnav">
-              <li class="nav_head">
-                <a href="#">Torn Piece of Paper</a>
-                <ul class="action">
-                  <li><a href="">Pick Up</a></li>
-                </ul>
-              </li>
-            </ul>
+          </li>                
+          <li id="search" class="nav"><%= link_to "Search", "/scene/search?scene_id=#{@scene.id}}" %> 
           </li>
         </ul>
       </li>   
     </ul>
   </div>
 </div>
-<%= link_to "Search", "/scene/search?scene_id=#{@scene.id}}" %> 
+
 <% if !@scene.user_scene_states.find_by_user_id(current_user.id).blank? && current_user.admin? %>
   (<%= @scene.user_scene_states.find_by_user_id(current_user.id).searchable? %>)
 <% end %>
