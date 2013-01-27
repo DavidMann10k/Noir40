@@ -6,6 +6,11 @@ BrutalSunshine::Application.routes.draw do
   match 'scene/search' => 'scenes#search'
   match 'new_game' => 'users#new_game'
 
+  match 'bleed_out' => 'users#new_game'
+  match 'death' => 'users#new_game'
+  match 'killed' => 'users#new_game'
+  match 'revege' => 'users#new_game'
+
   resources :scene_objects
 
   resources :nections
