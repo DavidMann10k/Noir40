@@ -8,6 +8,8 @@ class Scene < ActiveRecord::Base
   
   has_many :scene_objects
 
+  has_many :user_scene_states
+
   has_attached_file :floor, styles: {
     full: '800x600>',
   }
