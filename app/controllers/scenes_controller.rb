@@ -6,6 +6,10 @@ class ScenesController < ApplicationController
 
   def show
     redirect_to "/death" if current_user.beats <= 0
+    redirect_to "/revenge" if @scene.end? && current_user.gun?
+    redirect_to "/killed" if @scene.end? && !current_user.gun?
+
+
   end
 
   def new
