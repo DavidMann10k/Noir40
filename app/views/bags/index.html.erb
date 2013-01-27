@@ -1,0 +1,17 @@
+<% title "Bags" %>
+
+<table>
+  <tr>
+    <th>User</th>
+  </tr>
+  <% for bag in @bags %>
+    <tr>
+      <td><%= bag.user_id %></td>
+      <td><%= link_to "Show", bag %></td>
+      <td><%= link_to "Edit", edit_bag_path(bag) %></td>
+      <td><%= link_to "Destroy", bag, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Bag", new_bag_path %></p>

@@ -1,0 +1,12 @@
+<% title "Bag" %>
+
+<p>
+  <strong>User:</strong>
+  <%= @bag.user_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_bag_path(@bag) %> |
+  <%= link_to "Destroy", @bag, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", bags_path %>
+</p>
