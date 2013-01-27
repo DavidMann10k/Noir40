@@ -40,7 +40,19 @@ class ScenesController < ApplicationController
     @scene.nections.each do |n|
       if n.direction == params[:direction]
         redirect_to scene_path(n.adjacent)
-        ##use a heart
+        # use a heart
+      end
+    end
+  end
+
+  def search
+    @scene = Scene.find params[:scene_id]
+
+    if @scene.scene_objects.searchables
+      if session["scene_#{@scene.id}"] = false
+        @scene.scene_objects.each do |so|
+          session["object_#{so.id}"] = true
+        end
       end
     end
   end
