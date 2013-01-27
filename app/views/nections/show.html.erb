@@ -2,11 +2,11 @@
 
 <p>
   <strong>Scene:</strong>
-  <%= @nection.scene_id %>
+  <%= @nection.scene.name if @nection.scene %>
 </p>
 <p>
   <strong>Adjacent:</strong>
-  <%= @nection.adjacent_id %>
+  <%= @nection.adjacent.name if @nection.adjacent %>
 </p>
 <p>
   <strong>Direstion:</strong>
