@@ -9,7 +9,7 @@ BrutalSunshine::Application.routes.draw do
   match 'bleed_out' => 'pages#bleed_out'
   match 'death' => 'pages#death'
   match 'killed' => 'pages#killed'
-  match 'revege' => 'pages#revenge'
+  match 'revenge' => 'pages#revenge'
 
   resources :scene_objects
 
