@@ -8,6 +8,13 @@ class UsersController < ApplicationController
   end
 
   def new_game
+    states = UserSceneState.find_all_by_user_id(current_user)
+    if !states.empty?
+      states.each do |s|
+        s.destroy
+      end
+    end
+
     Scene.all.each do |s|
       UserSceneState.create(user_id: current_user.id, scene_id: s.id, searchable: true)
     end
