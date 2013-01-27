@@ -38,15 +38,11 @@ ul {
 }
 
 #player {
-
+	z-index: 4;
 }
 
-#object_0 {
-
-}
-
-#object_1 {
-
+div.ui {
+	z-index: 5;
 }
 
 #menu {
