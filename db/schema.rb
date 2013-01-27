@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127153119) do
+ActiveRecord::Schema.define(:version => 20130127181534) do
 
   create_table "bags", :force => true do |t|
     t.integer  "user_id"
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(:version => 20130127153119) do
 
   create_table "scenes", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.string   "floor_file_name"
     t.string   "floor_content_type"
     t.integer  "floor_file_size"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(:version => 20130127153119) do
     t.string   "right_wall_content_type"
     t.integer  "right_wall_file_size"
     t.datetime "right_wall_updated_at"
+    t.boolean  "beginning",               :default => false
+    t.boolean  "end",                     :default => false
   end
 
   create_table "user_object_states", :force => true do |t|
@@ -90,6 +92,8 @@ ActiveRecord::Schema.define(:version => 20130127153119) do
     t.string   "name",                   :default => "",                      :null => false
     t.string   "time_zone",              :default => "Central Standard Time", :null => false
     t.integer  "beats"
+    t.boolean  "knife"
+    t.boolean  "gun"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

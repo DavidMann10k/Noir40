@@ -30,6 +30,8 @@ class UsersController < ApplicationController
     end
 
     cu.beats = ENV['USER_BEATS'] || 17
+    cu.gun = false
+    cu.knife = false
     cu.save
 
     SceneObject.all.each do |so|

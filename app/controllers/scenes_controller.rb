@@ -5,6 +5,7 @@ class ScenesController < ApplicationController
   end
 
   def show
+    #check victory conditions
   end
 
   def new
@@ -31,15 +32,17 @@ class ScenesController < ApplicationController
 
   def destroy
     @scene.destroy
-    redirect_to scenes_url, :notice => "Successfully destroyed scene."
-  end
+    redirect_to scenes_url, :notice => "Successfully destroyed scene.
+"  end
 
   def move
     @scene = Scene.find params[:scene_id]
 
     @scene.nections.each do |n|
       if n.direction == params[:direction]
-        user.beats -= 1
+        c = current_user
+        c.beats -= 1
+        c.save
         redirect_to scene_path(n.adjacent)
       end
     end
@@ -58,7 +61,15 @@ class ScenesController < ApplicationController
 
     if !SceneObject.find_all_by_scene_id(@scene.id).empty?
       current_user.user_object_states.each do |uos|
-        flash[:notice] = "there's an object" if uos.scene_object.scene.id == @scene.id
+        if uos.scene_object && uos.scene_object.name.downcase == 'the gun'
+          flash[:notice] = "You found a gun!"
+          u = current_user
+          u.gun = true
+          u.save
+        else
+          fash[:notice] = "you found nothing"
+        end
+
       end
     end
 

@@ -1,5 +1,5 @@
 class Scene < ActiveRecord::Base
-  attr_accessible :name, :floor, :left_wall, :right_wall
+  attr_accessible :name, :floor, :left_wall, :right_wall, :beginning, :end
 
   has_many :nections
   has_many :nected, :through => :nections, :source => :scene
@@ -20,4 +20,7 @@ class Scene < ActiveRecord::Base
   has_attached_file :right_wall, styles: {
     full: '800x600>',
   }
+
+  scope :beginning, where(beginning: true)
+  scope :end, where(:end => true)
 end
