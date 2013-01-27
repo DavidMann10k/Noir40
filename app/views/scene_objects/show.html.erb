@@ -6,7 +6,7 @@
 </p>
 <p>
   <strong>Scene:</strong>
-  <%= @scene_object.scene.name if scene_object.scene %>
+  <%= @scene_object.scene.name if @scene_object.scene %>
 </p>
 <p>
   <strong>Obtainable:</strong>
@@ -18,7 +18,7 @@
 </p>
 <p>
   <strong>Scene:</strong>
-  <%= @scene_object.scene.name if scene_object.scene %>
+  <%= @scene_object.scene.name if @scene_object.scene %>
 </p>
 
 <%= image_tag @scene_object.image.url(:half) %>

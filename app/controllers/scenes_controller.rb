@@ -5,7 +5,7 @@ class ScenesController < ApplicationController
   end
 
   def show
-    #check victory conditions
+    redirect_to "/death" if current_user.beats <= 0
   end
 
   def new

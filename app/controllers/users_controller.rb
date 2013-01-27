@@ -40,6 +40,6 @@ class UsersController < ApplicationController
       end
     end
 
-    redirect_to scene_path(11)
+    redirect_to scene_path(Scene.where(beginning: true).first)
   end
 end
