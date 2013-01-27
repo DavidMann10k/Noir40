@@ -39,8 +39,8 @@ class ScenesController < ApplicationController
 
     @scene.nections.each do |n|
       if n.direction == params[:direction]
+        user.beats -= 1
         redirect_to scene_path(n.adjacent)
-        # use a heart
       end
     end
   end
@@ -48,12 +48,20 @@ class ScenesController < ApplicationController
   def search
     @scene = Scene.find params[:scene_id]
     uss = current_user.user_scene_states.find_by_scene_id(params[:scene_id])
+    
     uss.searchable = false
     uss.save
 
-    @scene.scene_objects.each do |so|
-      #make things visible
+    cu = current_user
+    cu.beats -= 1
+    cu.save
+
+    if !SceneObject.find_all_by_scene_id(@scene.id).empty?
+      current_user.user_object_states.each do |uos|
+        flash[:notice] = "there's an object" if uos.scene_object.scene.id == @scene.id
+      end
     end
-    redirect_to scene_path(@scene)
+
+    redirect_to scene_path(@scene.id)
   end
 end

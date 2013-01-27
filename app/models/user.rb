@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_one :bag
   has_many :user_scene_states
+  has_many :user_object_states
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   user_regex = /^\w+$/

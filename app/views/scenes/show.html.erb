@@ -10,7 +10,7 @@
     <% end %>
   <% end %>
   <div id="menu" class="ui">
-    <div id="heart"><div id="beats">200</div></div>
+    <div id="heart"><div id="beats"><%= current_user.beats %></div></div>
     <ul id="nav_wrapper">
       <li>
         <ul>
@@ -61,7 +61,7 @@
   </div>
 </div>
 <%= link_to "Search", "/scene/search?scene_id=#{@scene.id}}" %> 
-<% if !@scene.user_scene_states.find_by_user_id(current_user.id).blank? %>
+<% if !@scene.user_scene_states.find_by_user_id(current_user.id).blank? && current_user.admin? %>
   (<%= @scene.user_scene_states.find_by_user_id(current_user.id).searchable? %>)
 <% end %>
 <%= link_to "Edit", edit_scene_path(@scene) if can? :edit, @scene %> |

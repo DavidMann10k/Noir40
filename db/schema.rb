@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127024957) do
+ActiveRecord::Schema.define(:version => 20130127153119) do
 
   create_table "bags", :force => true do |t|
     t.integer  "user_id"
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(:version => 20130127024957) do
     t.string   "right_wall_content_type"
     t.integer  "right_wall_file_size"
     t.datetime "right_wall_updated_at"
+  end
+
+  create_table "user_object_states", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "scene_object_id"
+    t.boolean  "visible"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "user_scene_states", :force => true do |t|
