@@ -17,6 +17,7 @@ ul {
 
 #scene div.ui {
 	position: absolute;
+	z-index: 5;
 }
 
 #scene div.ui  img{
@@ -34,18 +35,6 @@ ul {
 
 #floor {
 	z-index: 3;
-}
-
-#player {
-
-}
-
-#object_0 {
-
-}
-
-#object_1 {
-
 }
 
 #compass {
