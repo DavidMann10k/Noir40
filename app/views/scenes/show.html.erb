@@ -1,8 +1,8 @@
 <% title @scene.name %>
-<div id="scene">
-  <div id="wall_l" class="ui"><img src="images/noir_wall_l_apartment_02_1.png"/></div>
-  <div id="wall_r" class="ui"><img src="images/noir_wall_r_apartment_01_1.png"/></div>
-  <div id="floor" class="ui"><img src="images/noir_floor_hardwood_2.png"/></div>
+  <div id="scene">
+    <div id="wall_l" class="ui"><%= image_tag @scene.left_wall.url(:full) %></div>
+    <div id="wall_r" class="ui"><%= image_tag @scene.right_wall.url(:full) %></div>
+    <div id="floor" class="ui"><%= image_tag @scene.floor.url(:full) %></div>
   <div id="player" class="ui"></div>
   <% @scene.scene_objects.each do |o| %>
     <%= content_tag :div, 'scene_object_id' => o.id, :class => 'ui' do %>
@@ -45,7 +45,7 @@
             </ul>
           </li>
                 
-          <li id="search" class="nav"><a href="#">Search</a>
+          <li id="search" class="nav"><%= link_to "Search", "/scenes/search?"
             <ul class="search_subnav">
               <li class="nav_head">
                 <a href="#">Torn Piece of Paper</a>
