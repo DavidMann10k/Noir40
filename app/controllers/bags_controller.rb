@@ -41,6 +41,6 @@ class BagsController < ApplicationController
 
   def add_item
     @scene_object = SceneObject.find(params[item_id])
-    session[params[:item]] = 
+    #session[params[:item]] = 
   end
 end

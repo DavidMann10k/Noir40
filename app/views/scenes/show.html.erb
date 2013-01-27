@@ -60,6 +60,7 @@
     </ul>
   </div>
 </div>
+<%= link_to "Search", "/scene/search?scene_id=#{@scene.id}}" %> (<%= @scene.user_scene_states.find_by_user_id(current_user.id).searchable? %>)
 <%= link_to "Edit", edit_scene_path(@scene) if can? :edit, @scene %> |
 <%= link_to "Destroy", @scene, :confirm => 'Are you sure?', :method => :delete if can? :destroy, @scene %> |
 <%= link_to "View All", scenes_path if signed_in? && current_user.admin? %>
