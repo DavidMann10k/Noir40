@@ -4,13 +4,15 @@
   <tr>
     <th>Scene</th>
     <th>Adjacent</th>
-    <th>Direstion</th>
+    <th>Direction</th>
+    <th>Label</th>
   </tr>
   <% for nection in @nections %>
     <tr>
       <td><%= nection.scene.name if nection.scene %></td>
       <td><%= nection.adjacent.name if nection.adjacent %></td>
       <td><%= nection.direction %></td>
+      <td><%= nection.label %></td>
       <td><%= link_to "Show", nection %></td>
       <td><%= link_to "Edit", edit_nection_path(nection) %></td>
       <td><%= link_to "Destroy", nection, :confirm => 'Are you sure?', :method => :delete %></td>

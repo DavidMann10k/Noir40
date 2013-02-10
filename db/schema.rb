@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130127181534) do
+ActiveRecord::Schema.define(:version => 20130210193450) do
 
   create_table "bags", :force => true do |t|
     t.integer  "user_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130127181534) do
     t.string   "direction"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "label"
   end
 
   create_table "scene_objects", :force => true do |t|

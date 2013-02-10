@@ -18,7 +18,7 @@
           <li id="move" class="nav"><a href="#">Move</a>
             <ul class="move_subnav">
               <% @scene.nections.each do |n| %>
-                <li><%= link_to n.direction, "/scene/move?direction=#{n.direction}&scene_id=#{@scene.id}" %></li>
+                <li><%= link_to n.label_or_direction, "/scene/move?direction=#{n.direction}&scene_id=#{@scene.id}" %></li>
               <% end %>
             </ul>
           </li>                

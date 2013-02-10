@@ -12,5 +12,9 @@
     <%= f.label :adjacent_id %><br />
     <%= f.select :adjacent_id, Scene.all.collect {|s| [s.name, s.id ]} %>
   </p>
+  <p>
+    <%= f.label :label %><br />
+    <%= f.text_field :label %>
+  </p>
   <p><%= f.submit %></p>
 <% end %>
