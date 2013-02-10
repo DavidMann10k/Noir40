@@ -8,4 +8,8 @@ class Nection < ActiveRecord::Base
     return direction if label.blank?
     return label
   end
+
+  def self.by_scene_name
+    joins(:scene).order('name ASC')
+  end
 end

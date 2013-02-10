@@ -1,6 +1,7 @@
 class NectionsController < ApplicationController
   load_and_authorize_resource
   def index
+    @nections = Nection.by_scene_name
   end
 
   def show

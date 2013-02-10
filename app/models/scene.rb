@@ -23,4 +23,6 @@ class Scene < ActiveRecord::Base
 
   scope :beginning, where(beginning: true)
   scope :end, where(:end => true)
+
+  default_scope order('name ASC')
 end

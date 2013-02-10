@@ -7,19 +7,20 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav>
+    <nav class="user">
       <%= link_to "Sign in", new_user_session_path unless signed_in? %>
       <%= link_to "Sign up", new_user_registration_path unless signed_in? %>
-      <%= link_to "Profile", user_path(current_user) if signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path, :method => :delete if signed_in? %>
-      <% if signed_in? && current_user.admin? %>
-         | <%= link_to "Scenes", scenes_path %> | 
-        <%= link_to "Scene Objects", scene_objects_path %> | 
-        <%= link_to "Nections", nections_path %>
-      <% end %>
       <%= link_to "New Game", "/new_game" if signed_in? %>
       <% yield :nav %>
     </nav>
+    <% if signed_in? && current_user.admin? %>
+      <nav class="admin">
+        <%= link_to "Scenes", scenes_path, :class => "admin" %>
+        <%= link_to "Scene Objects", scene_objects_path, :class => "admin" %>
+        <%= link_to "Nections", nections_path, :class => "admin" %>
+      </nav>
+    <% end %>
     <div class="flash">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>

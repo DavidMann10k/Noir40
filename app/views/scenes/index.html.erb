@@ -1,6 +1,9 @@
 <% title "Scenes" %>
 
-<table>
+<p class="admin">beginning scene: <%= Scene.beginning.first.name unless Scene.beginning.blank? %></p>
+<p class="admin">end scene: <%= Scene.end.first.name unless Scene.end.blank? %></p>
+
+<table class="admin">
   <tr>
     <th>Name</th>
   </tr>
@@ -14,6 +17,4 @@
   <% end %>
 </table>
 
-<p><%= link_to "New Scene", new_scene_path %></p>
-<p>beginning scene: <%= Scene.beginning.first.name unless Scene.beginning.blank? %></p>
-<p>end scene: <%= Scene.end.first.name unless Scene.end.blank? %></p>
+<%= link_to "New Scene", new_scene_path, :class => "admin" %>
