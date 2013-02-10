@@ -5,6 +5,12 @@ class ScenesController < ApplicationController
   end
 
   def show
+    @directions
+    @north = Nection.where('direction = ? AND scene_id = ?', 'north', @scene.id).first
+    @east =  Nection.where('direction = ? AND scene_id = ?', 'east',  @scene.id).first
+    @south = Nection.where('direction = ? AND scene_id = ?', 'south', @scene.id).first
+    @west =  Nection.where('direction = ? AND scene_id = ?', 'west',  @scene.id).first
+
     redirect_to "/death" if current_user.beats <= 0
     redirect_to "/revenge" if @scene.end? && current_user.gun?
     redirect_to "/killed" if @scene.end? && !current_user.gun?

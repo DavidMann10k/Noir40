@@ -9,24 +9,15 @@
       <%= image_tag o.image.url(:screen) %>
     <% end %>
   <% end %>
-  <div id="compass" class="ui"></div>
+  <div class="directions">
+    <div id="north" class="ui"><%= link_to @north.label_or_direction, "/scene/move?direction=#{@north.direction}&scene_id=#{@scene.id}" if @north %></div>
+    <div id="east" class="ui"><%= link_to @east.label_or_direction, "/scene/move?direction=#{@east.direction}&scene_id=#{@scene.id}" if @east %></div>
+    <div id="south" class="ui"><%= link_to @south.label_or_direction, "/scene/move?direction=#{@south.direction}&scene_id=#{@scene.id}" if @south %></div>
+    <div id="west" class="ui"><%= link_to @west.label_or_direction, "/scene/move?direction=#{@west.direction}&scene_id=#{@scene.id}" if @west %></div>
+  </div>
+  <div class="ui"></div>
   <div id="menu" class="ui">
     <div id="heart"><div id="beats"><%= current_user.beats %></div></div>
-    <ul id="nav_wrapper">
-      <li>
-        <ul>
-          <li id="move" class="nav"><a href="#">Move</a>
-            <ul class="move_subnav">
-              <% @scene.nections.each do |n| %>
-                <li><%= link_to n.label_or_direction, "/scene/move?direction=#{n.direction}&scene_id=#{@scene.id}" %></li>
-              <% end %>
-            </ul>
-          </li>                
-          <li id="search" class="nav"><%= link_to "Search", "/scene/search?scene_id=#{@scene.id}}" %> 
-          </li>
-        </ul>
-      </li>   
-    </ul>
   </div>
 </div>
 
