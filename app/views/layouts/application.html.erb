@@ -12,7 +12,6 @@
       <%= link_to "Sign in", new_user_session_path unless signed_in? %>
       <%= link_to "Sign up", new_user_registration_path unless signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path, :method => :delete if signed_in? %>
-      <%= link_to "New Game", "/new_game" if signed_in? %>
       <% yield :nav %>
     </nav>
     <% if signed_in? && current_user.admin? %>
@@ -22,6 +21,10 @@
         <%= link_to "Nections", nections_path, :class => "admin" %>
       </nav>
     <% end %>
+    <div class='title'>
+      <h1>Noir 40</h1>
+      <h3><%= link_to "New Game", "/new_game" if signed_in? %></h3>
+    </div>
     <div class="flash">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
