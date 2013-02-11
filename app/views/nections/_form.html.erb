@@ -1,20 +1,20 @@
 <%= form_for @nection do |f| %>
   <%= f.error_messages %>
-  <p>
+  <div class="field">
     <%= f.label :scene_id %><br />
     <%= f.select :scene_id, Scene.all.collect {|s| [s.name, s.id ]} %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :direction %><br />
     <%= f.select :direction, options_for_select([["north (UR)", "north"], ["south (LL)", "south"], ["east (LR)", "east"], ["west (UL)", "west"]], @nection.direction) %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :adjacent_id %><br />
     <%= f.select :adjacent_id, Scene.all.collect {|s| [s.name, s.id ]} %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :label %><br />
     <%= f.text_field :label %>
-  </p>
-  <p><%= f.submit %></p>
+  </div>
+  <%= f.submit %>
 <% end %>

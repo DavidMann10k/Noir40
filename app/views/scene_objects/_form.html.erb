@@ -1,24 +1,24 @@
 <%= form_for @scene_object do |f| %>
   <%= f.error_messages %>
-  <p>
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :scene_id %><br />
     <%= f.select :scene_id, Scene.all.collect {|s| [s.name, s.id ]} %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :obtainable %><br />
     <%= f.check_box :obtainable %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :image %><br />
     <%= f.file_field :image %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :location %><br />
     <%= f.select :location, options_for_select([["north (UR)", "north"], ["south (LL)", "south"], ["east (LR)", "east"], ["west (UL)", "west"]], @scene_object.location) %>
-  </p>
-  <p><%= f.submit %></p>
+  </div>
+  <%= f.submit %>
 <% end %>
