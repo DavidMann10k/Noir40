@@ -1,6 +1,6 @@
 h1. Noir 40
 
-A game made by David Mann (Backend), Mike Ott (Frontend, Art, Graphics), and Corey VanMeekeran (Scene, Character Art).
+A game made, for the Global Game Jam 2013, by David Mann (Backend), Mike Ott (Frontend, Art, Graphics), and Corey VanMeekeran (Scene, Character Art).
 
 This game doesn't entirely work.  But if you sign in, you will experience something.
 
